@@ -5,7 +5,11 @@ const uri = "mongodb+srv://heliiooo0202_db_user:2qLR29owIWeDjYiy@cluster0.vblwmm
 const client = new MongoClient(uri, {
   tls: true,
   serverSelectionTimeoutMS: 3000,
-  autoSelectFamily: false,
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+ }
 }
 );
 
