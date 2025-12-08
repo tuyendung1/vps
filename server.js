@@ -3,12 +3,14 @@ const uri = "mongodb+srv://heliiooo0202_db_user:2qLR29owIWeDjYiy@cluster0.vblwmm
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
+	//	'user':   'root',
+	//	'pass':   '',
+		'dbName': 'PlayGame', // red
+		'useNewUrlParser': true,
+		'useUnifiedTopology': true,
+		//'autoIndex':       false,
+}
+);
 
 async function run() {
   try {
