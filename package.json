@@ -10,7 +10,7 @@
     "node": ">=16.20.1"
   },
   "dependencies": {
-    "mongoose": "^8.0.0"
+    "mongoose": "^5.12.7"
   },
   "devDependencies": {
   },
