@@ -1,0 +1,14 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "Mo ta du an",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+  },
+  "dependencies": {
+    "mongoose": "^5.12.7"
+  },
+  "devDependencies": {
+  }
+}
