@@ -3,8 +3,6 @@ const uri = "mongodb+srv://heliiooo0202_db_user:2qLR29owIWeDjYiy@cluster0.vblwmm
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
-  tls: true,
-  serverSelectionTimeoutMS: 3000,
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
