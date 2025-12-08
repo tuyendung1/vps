@@ -6,8 +6,6 @@ const client = new MongoClient(uri, {
 	//	'user':   'root',
 	//	'pass':   '',
 		'dbName': 'PlayGame', // red
-		'useNewUrlParser': true,
-		'useUnifiedTopology': true,
 		//'autoIndex':       false,
 }
 );
