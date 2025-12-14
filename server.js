@@ -14,10 +14,12 @@ let Create     = function(client, name){
 let express       = require('express');
 let app           = express();
 //let server 	  	  = https.createServer(credentials, app);
-/***app.use(cors({
+app.use(cors({
     origin: '*',
     optionsSuccessStatus: 200
-}));***/
+}));
+let expressWs  = require('express-ws')(app);
+app.use(express.static('public'));
 let port       = process.env.PORT || 2002;
 app.listen(port, function() {
     console.log("Server listen on port ", port);
