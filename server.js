@@ -1,3 +1,4 @@
+var cors = require('cors');
 let svgCaptcha = require('svg-captcha');
 let svg2img    = require('svg2img');
 let Create     = function(client, name){
