@@ -10,8 +10,8 @@ async function Create( name) {
     });
   });
 	
-		captcha = captcha.text;
-		console.log("client.captcha", captcha);
+		
+		console.log("client.captcha", captcha.text);
 		let data = {};
 		data['data'] = 'data:image/png;base64,' + buffer.toString('base64');
 		data['name'] = name;
