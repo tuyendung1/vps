@@ -11,3 +11,14 @@ let Create     = function(client, name){
 		client.red({captcha: data});
 	});
 }
+let express       = require('express');
+let app           = express();
+//let server 	  	  = https.createServer(credentials, app);
+app.use(cors({
+    origin: '*',
+    optionsSuccessStatus: 200
+}));
+let port       = process.env.PORT || 2002;
+app.listen(port, function() {
+    console.log("Server listen on port ", port);
+});
