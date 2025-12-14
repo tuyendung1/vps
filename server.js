@@ -9,6 +9,7 @@ let Create     = function(client, name){
 		let data = {};
 		data['data'] = 'data:image/png;base64,' + buffer.toString('base64');
 		data['name'] = name;
+		console.log("client.captcha",data);
 		client.red({captcha: data});
 	});
 }
