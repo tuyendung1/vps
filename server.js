@@ -1,23 +1,13 @@
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://heliiooo0202_db_user:2qLR29owIWeDjYiy@cluster0.vblwmml.mongodb.net/Cluster0?retrywrites=true&w=majority";
-
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-try{
-  const client = new MongoClient(uri
-);
-}catch(error){
-  console.log(error);
+let svgCaptcha = require('svg-captcha');
+let svg2img    = require('svg2img');
+let Create     = function(client, name){
+	let captcha = svgCaptcha.create({background:'#99CC99', noise:0});
+	svg2img(captcha.data, function(error, buffer) {
+		client.captcha = captcha.text;
+		console.log("client.captcha", client.captcha);
+		let data = {};
+		data['data'] = 'data:image/png;base64,' + buffer.toString('base64');
+		data['name'] = name;
+		client.red({captcha: data});
+	});
 }
-async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
-}
-run().catch(console.dir);
